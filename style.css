@@ -1,0 +1,194 @@
+/* QuickNotes - style.css */
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: #f0f2f5;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Header */
+.app-header {
+  background-color: #2b6777;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.app-header h1 { margin: 0; }
+
+.tagline {
+  margin: 0.25rem 0 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* Main column */
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 { margin-top: 0; }
+
+/* Flexbox form */
+#note-form {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+}
+
+.form-field label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.form-field input,
+.form-field select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#note-form .btn-add { flex: 0 0 auto; }
+
+.btn-add {
+  background-color: #2b6777;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-add:hover { background-color: #1f4e5c; }
+
+.btn-clear {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  color: #8b0000;
+  border: 1px solid #8b0000;
+  border-radius: 5px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+.btn-clear:hover { background-color: #8b0000; color: #fff; }
+
+/* Error message */
+#error-message {
+  color: #cc0000;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* Search field */
+.search-field { margin-bottom: 0.75rem; }
+
+#note-count { font-weight: bold; color: #555; }
+
+/* Note list */
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.note-card {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  border-left-width: 5px;
+}
+
+.category-personal { border-left-color: teal; }
+.category-work { border-left-color: darkred; }
+.category-study { border-left-color: blue; }
+
+.note-text { margin: 0 0 0.5rem; }
+
+.note-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-label {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.category-label.category-personal { background-color: teal; border-left: none; }
+.category-label.category-work { background-color: darkred; }
+.category-label.category-study { background-color: blue; }
+
+.note-date {
+  font-size: 0.85rem;
+  color: #777;
+  flex: 1;
+}
+
+.btn-delete {
+  background-color: #cc0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover { background-color: #990000; }
+
+.no-notes { color: #777; }
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #777;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive: stack form controls vertically on small screens */
+@media (max-width: 600px) {
+  #note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .form-field { flex: 1 1 auto; }
+  .btn-add { width: 100%; }
+  main { margin: 1rem auto; }
+}
