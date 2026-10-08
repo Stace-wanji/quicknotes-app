@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickNotes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>QuickNotes</h1>
+    <p class="tagline">Jot it down before you forget it.</p>
+  </header>
+
+  <main>
+    <section class="card" id="add-section" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a note</h2>
+      <form id="note-form">
+        <div class="form-field">
+          <label for="note-input">Note text</label>
+          <input type="text" id="note-input" placeholder="Write your note here...">
+        </div>
+        <div class="form-field">
+          <label for="category-select">Category</label>
+          <select id="category-select">
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-add">Add Note</button>
+      </form>
+      <p id="error-message" role="alert"></p>
+      <button id="clear-all" class="btn-clear" type="button">Clear all</button>
+    </section>
+
+    <section class="card" id="notes-section" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Your notes</h2>
+      <div class="form-field search-field">
+        <label for="search-input">Search notes</label>
+        <input type="search" id="search-input" placeholder="Type to search your notes...">
+      </div>
+      <p id="note-count"></p>
+      <ul id="notes-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>QuickNotes &mdash; a simple note-taking app built with HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
